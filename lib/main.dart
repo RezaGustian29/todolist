@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:todolist/view/auth/login_view.dart';
-import 'package:todolist/view/splash/splash_view.dart';
+import 'package:todolist/view/auth/register_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,6 +19,7 @@ class MyApp extends StatelessWidget {
       routes: {
         //'/': (context) => const SplashView(),
         '/': (context) => const LoginView(),
+        '/register': (context) => const RegisterView(),
       },
     );
   }

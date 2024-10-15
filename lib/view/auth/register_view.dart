@@ -2,20 +2,22 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:todolist/config/theme.dart';
 
-class LoginView extends StatefulWidget {
-  const LoginView({super.key});
+class RegisterView extends StatefulWidget {
+  const RegisterView({super.key});
 
   @override
-  State<LoginView> createState() => _LoginViewState();
+  State<RegisterView> createState() => _RegisterViewState();
 }
 
-class _LoginViewState extends State<LoginView> {
+class _RegisterViewState extends State<RegisterView> {
   bool isVisible = true;
   @override
   Widget build(BuildContext context) {
     Widget backButton() {
       return GestureDetector(
-        onTap: () {},
+        onTap: () {
+          Navigator.pop(context);
+        },
         child: Row(
           children: [
             Image.asset(
@@ -32,7 +34,7 @@ class _LoginViewState extends State<LoginView> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'Login',
+            'Register',
             style: primaryTextStyle.copyWith(
               fontSize: 32,
               fontWeight: bold,
@@ -107,6 +109,36 @@ class _LoginViewState extends State<LoginView> {
               ),
             ),
           ),
+          SizedBox(
+            height: defaultMargin,
+          ),
+          Text(
+            'Confirm Password',
+            style: primaryTextStyle.copyWith(
+              fontSize: 16,
+              fontWeight: regular,
+            ),
+          ),
+          const SizedBox(
+            height: 8,
+          ),
+          TextFormField(
+            obscureText: isVisible,
+            style: primaryTextStyle.copyWith(fontSize: 16, fontWeight: regular),
+            decoration: InputDecoration(
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(defaultRadius),
+              ),
+              focusedBorder: OutlineInputBorder(
+                borderSide: BorderSide(color: secondaryColor),
+              ),
+              hintText: '..............',
+              hintStyle: subtitleTextStyle.copyWith(
+                fontSize: 16,
+                fontWeight: regular,
+              ),
+            ),
+          ),
         ],
       );
     }
@@ -132,7 +164,7 @@ class _LoginViewState extends State<LoginView> {
           ),
           onPressed: () {},
           child: Text(
-            'Login',
+            'Register',
             style: primaryTextStyle.copyWith(fontSize: 16, fontWeight: regular),
           ),
         ),
@@ -161,7 +193,7 @@ class _LoginViewState extends State<LoginView> {
                     ),
                     const SizedBox(width: 10),
                     Text(
-                      'Login with google',
+                      'Register with google',
                       style: primaryTextStyle.copyWith(
                         fontSize: 16,
                         fontWeight: regular,
@@ -194,7 +226,7 @@ class _LoginViewState extends State<LoginView> {
                     ),
                     const SizedBox(width: 10),
                     Text(
-                      'Login with apple',
+                      'Register with apple',
                       style: primaryTextStyle.copyWith(
                         fontSize: 16,
                         fontWeight: regular,
@@ -212,7 +244,7 @@ class _LoginViewState extends State<LoginView> {
             text: TextSpan(
               children: [
                 TextSpan(
-                  text: 'Don’t have an account? ',
+                  text: 'Already have an account? ',
                   style: primaryTextStyle.copyWith(
                     fontSize: 12,
                     fontWeight: regular,
@@ -220,14 +252,14 @@ class _LoginViewState extends State<LoginView> {
                   ),
                 ),
                 TextSpan(
-                  text: 'Register',
+                  text: 'Login',
                   style: primaryTextStyle.copyWith(
                     fontSize: 12,
                     fontWeight: regular,
                   ),
                   recognizer: TapGestureRecognizer()
                     ..onTap = () {
-                      Navigator.pushNamed(context, '/register');
+                      Navigator.pushNamed(context, '/login');
                     },
                 ),
               ],
@@ -240,9 +272,9 @@ class _LoginViewState extends State<LoginView> {
     return Scaffold(
       backgroundColor: primaryColor,
       body: SafeArea(
-        child: SingleChildScrollView(
-          child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: defaultMargin),
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: defaultMargin),
+          child: SingleChildScrollView(
             child: Column(
               children: [
                 const SizedBox(height: 30),

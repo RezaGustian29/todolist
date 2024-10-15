@@ -1,4 +1,57 @@
 import 'package:flutter/material.dart';
+import 'package:todolist/view/auth/login_view.dart';
+import 'package:todolist/view/splash/splash_view.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        useMaterial3: true,
+      ),
+      routes: {
+        //'/': (context) => const SplashView(),
+        '/': (context) => const LoginView(),
+      },
+    );
+  }
+}
+
+
+
+/* import 'package:flutter/material.dart';
+import 'package:todolist/view/auth/login_view.dart';
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  void main() {
+    runApp(const MyApp());
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      theme: ThemeData(
+        fontFamily: 'Lato',
+        useMaterial3: true,
+      ),
+      routes: {
+        '/': (context) => const LoginView(),
+        '/login': (context) => const LoginView(),
+      },
+    );
+  }
+} */
+
+/* import 'package:flutter/material.dart';
 
 void main() {
   runApp(const MyApp());
@@ -123,3 +176,4 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
+ */

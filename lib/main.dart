@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:todolist/provider/page_provider.dart';
 import 'package:todolist/view/auth/login_view.dart';
 import 'package:todolist/view/auth/register_view.dart';
+import 'package:todolist/view/bottom_navbar/bottom_navbar.dart';
+import 'package:todolist/view/home/home_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,19 +15,30 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        useMaterial3: true,
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (context) => PageProvider()),
+      ],
+      child: MaterialApp(
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          useMaterial3: true,
+        ),
+        routes: {
+          //'/': (context) => const SplashView(),
+          '/': (context) => const LoginView(),
+          '/bottom': (context) => const BottomNavbar(),
+          '/register': (context) => const RegisterView(),
+          '/home': (context) => const HomeView(),
+        },
       ),
-      routes: {
-        //'/': (context) => const SplashView(),
-        '/': (context) => const LoginView(),
-        '/register': (context) => const RegisterView(),
-      },
     );
   }
 }
+
+
+
+
 
 
 

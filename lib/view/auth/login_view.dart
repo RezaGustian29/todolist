@@ -130,7 +130,9 @@ class _LoginViewState extends State<LoginView> {
             ),
             backgroundColor: purpleTextColor,
           ),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pushNamed(context, '/bottom');
+          },
           child: Text(
             'Login',
             style: primaryTextStyle.copyWith(fontSize: 16, fontWeight: regular),

@@ -8,6 +8,9 @@ Color secondaryColor = const Color(0xff979797);
 Color hintTextColor = const Color(0xff535353);
 Color primaryTextColor = const Color(0xffFFFFFF);
 Color purpleTextColor = const Color(0xff8875FF);
+Color contentColor = const Color(0xff363636);
+Color subtitleColor = const Color(0xffAFAFAF);
+Color contentCardColor = const Color(0xff809CFF);
 
 TextStyle primaryTextStyle = TextStyle(color: primaryTextColor);
 TextStyle subtitleTextStyle = TextStyle(color: hintTextColor);

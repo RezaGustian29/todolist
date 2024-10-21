@@ -4,6 +4,7 @@ import 'package:todolist/provider/page_provider.dart';
 import 'package:todolist/view/auth/login_view.dart';
 import 'package:todolist/view/auth/register_view.dart';
 import 'package:todolist/view/bottom_navbar/bottom_navbar.dart';
+import 'package:todolist/view/category/add_category_view.dart';
 import 'package:todolist/view/home/home_view.dart';
 
 void main() {
@@ -30,6 +31,7 @@ class MyApp extends StatelessWidget {
           '/bottom': (context) => const BottomNavbar(),
           '/register': (context) => const RegisterView(),
           '/home': (context) => const HomeView(),
+          '/category': (context) => const AddCategoryView(),
         },
       ),
     );

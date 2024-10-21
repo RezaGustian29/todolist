@@ -159,13 +159,19 @@ class _BottomNavbarState extends State<BottomNavbar> {
                                                     children: <Widget>[
                                                       ...List.generate(
                                                         12,
-                                                        (context) =>
-                                                            Image.asset(
-                                                          'assets/icons/icons_category.png',
-                                                          width: 64,
-                                                          height: 90,
+                                                        (index) =>
+                                                            GestureDetector(
+                                                          onTap: () => Navigator
+                                                              .pushNamed(
+                                                                  context,
+                                                                  '/category'),
+                                                          child: Image.asset(
+                                                            'assets/icons/icons_category.png',
+                                                            width: 64,
+                                                            height: 90,
+                                                          ),
                                                         ),
-                                                      ),
+                                                      )
                                                     ],
                                                   ),
                                                   Row(
